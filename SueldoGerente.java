@@ -1,12 +1,24 @@
-import java.util.Scanner;
 
-public class SueldoGerente {
-    //● Gerentes: reciben un sueldo base (por ser gerentes) + una bonificación
-    public static void main (String[] args){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese el sueldo de un ingeniero: ");
-        double sueldo = scanner.nextDouble();
-        System.out.println("Sueldo Gerente: " + (sueldo + 500));
 
+class Gerente extends Empleado {
+    private double sueldoBase;
+    private double bonificacion;
+
+    public Gerente(int id, String nombre, String email, double sueldoBase, double bonificacion) {
+        super(id, nombre, email);
+        this.sueldoBase = sueldoBase;
+        this.bonificacion = bonificacion;
+    }
+
+    @Override
+    public double calcularSalario() {
+        return sueldoBase + bonificacion;
+    }
+
+    @Override
+    public void describir() {
+        super.describir();
+        System.out.println("Rol: Gerente");
+        System.out.println("Salario: " + calcularSalario());
     }
 }

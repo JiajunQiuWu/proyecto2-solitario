@@ -1,9 +1,9 @@
 
-class Ingeniero extends Empleado {
+class Administrativo extends Empleado {
     private double horasTrabajadas;
     private double sueldoPorHora;
 
-    public Ingeniero(int id, String nombre, String email, double horasTrabajadas, double sueldoPorHora) {
+    public Administrativo(int id, String nombre, String email, double horasTrabajadas, double sueldoPorHora) {
         super(id, nombre, email);
         this.horasTrabajadas = horasTrabajadas;
         this.sueldoPorHora = sueldoPorHora;
@@ -17,7 +17,7 @@ class Ingeniero extends Empleado {
     @Override
     public void describir() {
         super.describir();
-        System.out.println("Rol: Ingeniero");
+        System.out.println("Rol: Administrativo");
         System.out.println("Salario: " + calcularSalario());
     }
 }

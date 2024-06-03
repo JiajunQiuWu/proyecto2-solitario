@@ -1,16 +1,19 @@
-public class Empleado {
-    private String id;
-    private int nombre;
-    private int email;
+abstract class Empleado {
+    protected int id;
+    protected String nombre;
+    protected String email;
 
-    public Empleado(String id, int edad, double salario) {
+    public Empleado(int id, String nombre, String email) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
     }
 
-    public String getDescripcion() {
-        return "Empleado: " + this.id + ", " + this.nombre + ", " + this.email;
-    }
+    public abstract double calcularSalario();
 
+    public void describir() {
+        System.out.println("ID: " + id);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Email: " + email);
+    }
 }
